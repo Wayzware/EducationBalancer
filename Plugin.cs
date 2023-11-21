@@ -38,8 +38,8 @@ public static class SchoolPatch_Costs
         { "ElementarySchool01", (50000, 2000) },
         { "ElementarySchool01 Extension Wing", (20000, 1000) },
         { "University01", (375000, 2500) },
-        { "University01 Extension Wing", (125000, 1000) },
-        { "College01 Extension Wing", (110000, 1000) }
+        { "College01 Extension Wing", (110000, 1000) },
+        { "University01 Extension Wing", (125000, 1000) }
     };
 
     [HarmonyPrefix]
