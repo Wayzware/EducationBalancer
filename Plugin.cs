@@ -7,10 +7,10 @@ using System.Linq;
 using Game.Prefabs;
 using System.Collections.Generic;
 
-namespace Wayz.CS2.EducationBalancer;
+namespace Wayz.CS2.SchoolCapacityBalancer;
 
-[BepInPlugin("Wayz.CS2.EducationBalancerMod", "EducationBalancer", "0.0.1")]
-public class EducationBalancerMod : BaseUnityPlugin
+[BepInPlugin("Wayz.CS2.SchoolCapacityBalancer", "SchoolCapacityBalancer", "0.0.1")]
+public class SchoolCapacityBalancer : BaseUnityPlugin
 {
     public static ManualLogSource GameLogger = null!;
 
