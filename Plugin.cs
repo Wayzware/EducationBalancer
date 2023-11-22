@@ -1,5 +1,5 @@
 ﻿using BepInEx.Logging;
-using BepInEx.Unity.Mono;
+
 using BepInEx;
 using HarmonyLib;
 using System.Reflection;
@@ -30,7 +30,7 @@ public class SchoolCapacityBalancer : BaseUnityPlugin
     }
 }
 
-[HarmonyPatch("Game.Prefabs.PrefabSystem", "AddPrefab")]
+[HarmonyPatch(typeof(PrefabSystem), "AddPrefab")]
 public static class SchoolPatch_Costs
 {
     private static readonly Dictionary<string, (int, int)> _costAndCapacity = new()
