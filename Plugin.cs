@@ -1,22 +1,34 @@
-﻿using BepInEx.Logging;
+﻿#if BEPINEX6
 using BepInEx.Unity.Mono;
+#endif
+using BepInEx.Logging;
 using BepInEx;
 using HarmonyLib;
 using System.Reflection;
 using System.Linq;
-using Game.Prefabs;
 using System.Collections.Generic;
 
 namespace Wayz.CS2.SchoolCapacityBalancer;
 
-[BepInPlugin("Wayz.CS2.SchoolCapacityBalancer", "SchoolCapacityBalancer", "0.0.1")]
+[BepInPlugin("Wayz.CS2.SchoolCapacityBalancer", "SchoolCapacityBalancer", "0.1.0")]
 public class SchoolCapacityBalancer : BaseUnityPlugin
 {
     public static ManualLogSource GameLogger = null!;
 
+    public static IReadOnlyDictionary<string, SchoolOptions> SchoolOptions { get; private set; } = null!;
+
     private void Awake()
     {
         GameLogger = Logger;
+
+        SchoolCapacityBalancerOptions options = WayzSettingsManager.GetOrInitializeSettings<SchoolCapacityBalancerOptions>("SchoolCapacityBalancer_Wayz", "settings");
+        var filtered = options.RemoveBadEntires();
+        if(filtered != 0)
+        {
+            Logger.LogWarning($"Removed {filtered} bad entries loaded from settings file!");
+        }
+        SchoolCapacityBalancer.SchoolOptions = options.ToDictionary();
+
         var harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), MyPluginInfo.PLUGIN_GUID + "_Cities2Harmony");
 
         var patchedMethods = harmony.GetPatchedMethods();
@@ -27,34 +39,5 @@ public class SchoolCapacityBalancer : BaseUnityPlugin
         {
             Logger.LogInfo($"Patched method: {patchedMethod.Module.Name}:{patchedMethod.Name}");
         }
-    }
-}
-
-[HarmonyPatch("Game.Prefabs.PrefabSystem", "AddPrefab")]
-public static class SchoolPatch_Costs
-{
-    private static readonly Dictionary<string, (int, int)> _costAndCapacity = new()
-    {
-        { "ElementarySchool01", (50000, 2000) },
-        { "ElementarySchool01 Extension Wing", (20000, 1000) },
-        { "University01", (375000, 2500) },
-        { "College01 Extension Wing", (110000, 1000) },
-        { "University01 Extension Wing", (125000, 1000) }
-    };
-
-    [HarmonyPrefix]
-    public static bool Prefix(object __instance, PrefabBase prefab)
-    {
-        if (_costAndCapacity.TryGetValue(prefab.name, out var pair))
-        {
-            (var cost, var capacity) = pair;
-
-            var costComponent = prefab.GetComponent<ServiceConsumption>();
-            costComponent.m_Upkeep = cost;
-
-            var schoolComponent = prefab.GetComponent<School>();
-            schoolComponent.m_StudentCapacity = capacity;
-        }
-        return true;
     }
 }
