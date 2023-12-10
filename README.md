@@ -9,7 +9,7 @@ Exact stat tweaks:
     
 
 ## Installation - Thunderstore
-You can download and install the mod using a mod manager from [Thunderstore.io here](https://thunderstore.io/c/cities-skylines-ii/p/Wayzware/SchoolCapacityBalancer/).
+If you wish, you can download and install the mod with a modloader from [Thunderstore.io](https://thunderstore.io/c/cities-skylines-ii/p/Wayzware/SchoolCapacityBalancer/).
 
 ## Installation - Manual
 1. Install [BepInEx 6 Bleeding Edge build](https://builds.bepinex.dev/projects/bepinex_be) or BepInEx 5. 
