@@ -4,7 +4,7 @@ Tweaks the capacity of schools to make the number of schools required more sane/
 
 Exact stat tweaks:
 * Elementary School & extension wing capacity and upkeep are doubled
-* College extension wing capacity and upkeey are doubled
+* College extension wing capacity and upkeep are doubled
 * Regular university capacity and upkeep are increased by 25%
     
 
