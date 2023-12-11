@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Wayz.CS2.SchoolCapacityBalancer;
 
-[BepInPlugin("Wayz.CS2.SchoolCapacityBalancer", "SchoolCapacityBalancer", "0.1.0")]
+[BepInPlugin("Wayz.CS2.SchoolCapacityBalancer", "SchoolCapacityBalancer", "0.1.1")]
 public class SchoolCapacityBalancer : BaseUnityPlugin
 {
     public static ManualLogSource GameLogger = null!;
@@ -21,7 +21,20 @@ public class SchoolCapacityBalancer : BaseUnityPlugin
     {
         GameLogger = Logger;
 
-        SchoolCapacityBalancerOptions options = WayzSettingsManager.GetOrInitializeSettings<SchoolCapacityBalancerOptions>("SchoolCapacityBalancer_Wayz", "settings");
+        SchoolCapacityBalancerOptions options;
+        if (!WayzSettingsManager.TryGetSettings<SchoolCapacityBalancerOptions>("SchoolCapacityBalancer_Wayz", "settings", out options))
+        {
+            options = SchoolCapacityBalancerOptions.Default;
+            try
+            {
+                WayzSettingsManager.SaveSettings("SchoolCapacityBalancer_Wayz", "settings", options);
+            }
+            catch
+            {
+                Logger.LogWarning("Failed to save default config to settings file, using in-memory default config.");
+            }
+        }
+
         var filtered = options.RemoveBadEntires();
         if(filtered != 0)
         {
