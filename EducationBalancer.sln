@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolCapacityBalancer", "SchoolCapacityBalancer.csproj", "{238A9854-3854-4FB9-8075-8ECDBC2AE7AD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wayz.CS2.Lib", "..\WayzLib\Wayz.CS2.Lib.csproj", "{848C1A2D-ED75-42D5-A5A2-8DD8CE14B313}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{238A9854-3854-4FB9-8075-8ECDBC2AE7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{238A9854-3854-4FB9-8075-8ECDBC2AE7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{238A9854-3854-4FB9-8075-8ECDBC2AE7AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{848C1A2D-ED75-42D5-A5A2-8DD8CE14B313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{848C1A2D-ED75-42D5-A5A2-8DD8CE14B313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{848C1A2D-ED75-42D5-A5A2-8DD8CE14B313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{848C1A2D-ED75-42D5-A5A2-8DD8CE14B313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
