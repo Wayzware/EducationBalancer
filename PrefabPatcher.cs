@@ -11,13 +11,13 @@ public static class PrefabPatcher
     {
         if (SchoolCapacityBalancer.SchoolOptions.TryGetValue(prefab.name, out var overrides))
         {
-            if (overrides.UpkeepCost != 0)
+            if (overrides.UpkeepCost >= 0)
             {
                 var costComponent = prefab.GetComponent<ServiceConsumption>();
                 costComponent.m_Upkeep = overrides.UpkeepCost;
             }
 
-            if (overrides.StudentCapacity != 0)
+            if (overrides.StudentCapacity >= 0)
             {
                 var schoolComponent = prefab.GetComponent<School>();
                 schoolComponent.m_StudentCapacity = overrides.StudentCapacity;

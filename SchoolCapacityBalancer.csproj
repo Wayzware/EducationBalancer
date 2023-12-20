@@ -8,14 +8,16 @@
       https://api.nuget.org/v3/index.json;
       https://nuget.bepinex.dev/v3/index.json;
     </RestoreAdditionalProjectSources>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
   </PropertyGroup>
   
   <PropertyGroup>
-    <BepInEx6>true</BepInEx6>
-    <AutoInstall>false</AutoInstall>
+    <BepInEx6>false</BepInEx6>
+    <AutoInstall>true</AutoInstall>
     <Cities2_Location>C:\Program Files (x86)\Steam\steamapps\common\Cities Skylines II</Cities2_Location>
     <Cities2Libs_Location>$(Cities2_Location)</Cities2Libs_Location>
+    <Authors>Wayzware</Authors>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(BepInEx6)">
@@ -23,6 +25,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Cities Skylines II\Cities2_Data\Managed\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Colossal.AssetPipeline">
       <HintPath>$(Cities2Libs_Location)\Cities2_Data\Managed\Colossal.AssetPipeline.dll</HintPath>
       <Private>False</Private>
@@ -423,7 +428,6 @@
     <PackageReference Include="BepInEx.Unity.Mono" Version="6.0.0-be.*" IncludeAssets="compile" Condition="$(BepInEx6)" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
     <PackageReference Include="HarmonyX" Version="2.10.2" />
-    <PackageReference Include="Wayz.CS2.Lib" Version="0.2.1" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="true">
