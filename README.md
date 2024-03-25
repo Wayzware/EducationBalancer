@@ -1,4 +1,5 @@
 # School Capacity Balancer Mod
+https://mods.paradoxplaza.com/mods/75190/Windows
 
 This mod allows you to easily change the capacity of school buildings based on their education level (elementary, high school, college, and university).
 
