@@ -1,0 +1,45 @@
+﻿<Publish>
+	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
+	<ModId Value="75190" />
+	<!--Name of the mod to display to players-->
+	<DisplayName Value="School Capacity Balancer" />
+	<!--Short description of the mod-->
+	<ShortDescription Value="Modifies the capacity of school buildings" />
+	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
+	<!--LongDescription Value="This is a long description" /-->
+	<LongDescription>
+This mod allows you to easily change the capacity of school buildings based on their education level (elementary, high school, college, and university).
+
+
+The mod uses these pre-set values by default (values relative to vanilla capacities):
+
+* Elementary -> 200%
+* High School -> 100% (unchanged)
+* College -> 125%
+* University -> 125%
+
+
+You can also change these values yourself in the settings.
+	</LongDescription>
+	<!--Thumbnail-->
+	<Thumbnail Value="Properties/Thumbnail.png" />
+	<!--Screenshot, can be set multiple times-->
+	<Screenshot Value="" />
+	<!--Tag, can be set multiple times-->
+	<Tag Value="Code Mod" />
+	<!--Link to the forum post where the mod can be discussed-->
+	<ForumLink Value="" />
+	<!--Version of the mod-->
+	<ModVersion Value="1.1.0" />
+	<!--Recommended version of the base game to use the mod-->
+	<GameVersion Value="1.1.*" />
+	<!--Dependency for the mod, can be set multiple times-->
+	<Dependency Id="" />
+	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
+	<ChangeLog Value="Changing the capacity values no longer requires restarting the game." />
+	<!--ChangeLog>
+	</ChangeLog-->
+	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
+  <ExternalLink Type="github" Url="https://github.com/Wayzware" />
+  <ExternalLink Type="paypal" Url="https://www.paypal.com/paypalme/wayzware" />
+</Publish>
