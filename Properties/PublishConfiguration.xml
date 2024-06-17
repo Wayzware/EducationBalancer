@@ -36,7 +36,7 @@ You can also change these values yourself in the settings.
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="Changing the capacity values no longer requires restarting the game." />
+	<ChangeLog Value="Custom school assets from Asset Packs Manager are now supported." />
 	<!--ChangeLog>
 	</ChangeLog-->
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
