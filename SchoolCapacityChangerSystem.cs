@@ -1,4 +1,5 @@
-﻿using Game;
+﻿using Colossal.Serialization.Entities;
+using Game;
 using Game.Prefabs;
 using System.Collections.Generic;
 using Unity.Collections;
@@ -26,14 +27,21 @@ public partial class SchoolCapacityChangerSystem : GameSystemBase
         RequireForUpdate(_query);
     }
 
+    protected override void OnGamePreload(Purpose purpose, GameMode mode)
+    {
+        base.OnGamePreload(purpose, mode);
+        if(mode == GameMode.Game)
+        {
+            Enabled = true;
+        }
+    }
+
     protected override void OnUpdate() 
     {
         var schools = _query.ToEntityArray(Allocator.Temp);
 
         foreach (var school in schools)
         {
-            Mod.log.Info($"{school}");
-
             SchoolData schoolData;
             ConsumptionData serviceConsumption;
 
