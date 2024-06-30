@@ -28,7 +28,7 @@ You can also change these values yourself in the settings.
 	<!--Tag, can be set multiple times-->
 	<Tag Value="Code Mod" />
 	<!--Link to the forum post where the mod can be discussed-->
-	<ForumLink Value="" />
+	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/school-capacity-balancer.1689350/" />
 	<!--Version of the mod-->
 	<ModVersion Value="1.2.0" />
 	<!--Recommended version of the base game to use the mod-->

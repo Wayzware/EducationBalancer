@@ -25,7 +25,7 @@ public class Mod : IMod
         AssetDatabase.global.LoadSettings(nameof(SchoolCapacityBalancer), m_Setting, new Setting(this));
 
         updateSystem.UpdateBefore<SchoolCapacityChangerSystem>(SystemUpdatePhase.PrefabUpdate);
-        updateSystem.UpdateBefore<SchoolCapacityChangerSystem>(SystemUpdatePhase.PrefabReferences);
+        updateSystem.UpdateAfter<SchoolCapacityChangerSystem>(SystemUpdatePhase.PrefabReferences);
     }
 
     public void OnDispose()

@@ -30,10 +30,7 @@ public partial class SchoolCapacityChangerSystem : GameSystemBase
     protected override void OnGamePreload(Purpose purpose, GameMode mode)
     {
         base.OnGamePreload(purpose, mode);
-        if(mode == GameMode.Game)
-        {
-            Enabled = true;
-        }
+        Enabled = true;
     }
 
     protected override void OnUpdate() 
