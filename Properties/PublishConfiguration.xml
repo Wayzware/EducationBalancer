@@ -30,16 +30,16 @@ You can also change these values yourself in the settings.
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.2.0" />
+	<ModVersion Value="1.2.2" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="Custom school assets from Asset Packs Manager are now supported." />
+	<ChangeLog Value="Reverting to older version of the mod. APM custom school assets will no longer have their capacities changed automatically, though I'm looking into fixing this." />
 	<!--ChangeLog>
 	</ChangeLog-->
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
-  <ExternalLink Type="github" Url="https://github.com/Wayzware/EducationBalancer" />
+  <ExternalLink Type="github" Url="https://github.com/Wayzware" />
   <ExternalLink Type="paypal" Url="https://www.paypal.com/paypalme/wayzware" />
 </Publish>
